@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Task Resolution Flowchart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            /* Important: Remove default body margins/padding for clean embedding */
+            margin: 0;
+            padding: 0;
+        }
+        .flow-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+        }
+        .flow-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        .line-connector {
+            position: absolute;
+            width: 2px;
+            background-color: #6366f1; /* Indigo-500 */
+        }
+        /* Custom styles for arrows */
+        .arrow-right {
+            content: '';
+            position: absolute;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #f9fafb; /* Matches flow-card background */
+            top: calc(50% - 10px);
+            right: -10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Title & Introduction -->
+        <header class="text-center mb-10 p-6 bg-white rounded-xl shadow-lg">
+            <h1 class="text-3xl font-extrabold text-gray-800 md:text-4xl">
+                ABA Operations Task Resolution Flow
+            </h1>
+            <p class="text-gray-500 mt-2 text-lg">
+                Quickly determine the correct Manager for your task or issue.
+            </p>
+        </header>
+
+        <!-- Main Flow Container -->
+        <div class="relative grid grid-cols-1 md:grid-cols-5 gap-6">
+
+            <!-- 1. START / Employee Task -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="bg-indigo-600 text-white p-4 rounded-full font-bold text-center w-36 h-36 flex items-center justify-center shadow-2xl">
+                    <p class="text-xl">EMPLOYEE TASK / ISSUE</p>
+                </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="md:col-span-5 flex justify-center h-8 md:h-12">
+                <div class="w-1 bg-indigo-500 relative">
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-indigo-500"></div>
+                </div>
+            </div>
+
+            <!-- 2. Decision Point (Split) -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="bg-yellow-400 text-gray-800 p-6 rounded-xl font-semibold text-center w-full max-w-lg shadow-lg">
+                    <p class="text-lg">What is the core nature of the task?</p>
+                </div>
+            </div>
+
+            <!-- Arrow Splitter -->
+            <div class="hidden md:flex col-span-5 relative h-8 justify-center">
+                <div class="w-1/2 h-1 bg-indigo-500 absolute top-0 left-1/4"></div>
+                <div class="w-1/2 h-1 bg-indigo-500 absolute top-0 right-1/4"></div>
+
+                <!-- Down Arrows for split -->
+                <div class="absolute bottom-0 left-1/4 transform translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-indigo-500"></div>
+                <div class="absolute bottom-0 right-1/4 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-indigo-500"></div>
+            </div>
+            
+            <!-- Mobile Splitter -->
+            <div class="md:hidden col-span-1 flex justify-center h-8">
+                 <div class="w-1 bg-indigo-500 relative">
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-indigo-500"></div>
+                </div>
+            </div>
+
+
+            <!-- 3. KATIVA LANE (Logistics & Resources) -->
+            <div class="md:col-span-2 space-y-4 md:space-y-8 p-4 border-r-2 border-indigo-200 md:border-none">
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-teal-600 border-b-2 border-teal-500 pb-2 inline-block">GO TO: KATRIVA</h2>
+                    <p class="text-sm text-gray-500">(ABA Assistant Operations Manager)</p>
+                </div>
+                
+                <div class="flow-card bg-teal-50 p-4 rounded-xl relative border-l-4 border-teal-500">
+                    <p class="font-bold text-teal-800">Logistics & Scheduling</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-0.5">
+                        <li>Staff/Clinic Scheduling & Staffing</li>
+                        <li>Resource Allocation to meet client needs</li>
+                    </ul>
+                </div>
+                
+                <div class="flow-card bg-teal-50 p-4 rounded-xl relative border-l-4 border-teal-500">
+                    <p class="font-bold text-teal-800">Resources & Inventory</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-0.5">
+                        <li>Materials, Supplies, & Equipment</li>
+                        <li>Management of Clinic Facilities</li>
+                    </ul>
+                </div>
+                
+                <div class="flow-card bg-teal-50 p-4 rounded-xl relative border-l-4 border-teal-500">
+                    <p class="font-bold text-teal-800">Administrative Tasks</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-0.5">
+                        <li>Staff Timesheets</li>
+                        <li>New Client Onboarding (Service Coordination)</li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <!-- 4. CENTER SPACER (Vertical Line for Mobile) -->
+            <div class="md:hidden col-span-1 flex justify-center h-8">
+                 <div class="w-1 bg-indigo-500 relative">
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-indigo-500"></div>
+                </div>
+            </div>
+            <div class="hidden md:block md:col-span-1"></div>
+
+            <!-- 5. DEANNA LANE (People, Policy, & Strategy) -->
+            <div class="md:col-span-2 space-y-4 md:space-y-8 p-4 border-l-2 border-indigo-200 md:border-none">
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-fuchsia-600 border-b-2 border-fuchsia-500 pb-2 inline-block">GO TO: DEANNA</h2>
+                    <p class="text-sm text-gray-500">(ABA Operations Manager)</p>
+                </div>
+                
+                <div class="flow-card bg-fuchsia-50 p-4 rounded-xl relative border-l-4 border-fuchsia-500">
+                    <p class="font-bold text-fuchsia-800">Staff Development & HR</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-0.5">
+                        <li>RBT/Admin Staff Training & Supervision</li>
+                        <li>Staff Onboarding & Performance Reviews</li>
+                        <li>Work Environment & Professional Growth</li>
+                    </ul>
+                </div>
+                
+                <div class="flow-card bg-fuchsia-50 p-4 rounded-xl relative border-l-4 border-fuchsia-500">
+                    <p class="font-bold text-fuchsia-800">Client Relations & Quality</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-0.5">
+                        <li>Clinic Tours with Families</li>
+                        <li>Client Concerns, Feedback, & Service Quality</li>
+                    </ul>
+                </div>
+                
+                <div class="flow-card bg-fuchsia-50 p-4 rounded-xl relative border-l-4 border-fuchsia-500">
+                    <p class="font-bold text-fuchsia-800">Operations & Conflict</p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-1 space-y-0.5">
+                        <li>Day-to-day Operations Oversight</li>
+                        <li>Policies, Procedures, & Workflow Improvement</li>
+                        <li>Addressing/Resolving Staff or Client Concerns</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- LLM Feature Section -->
+            <div class="md:col-span-5 mt-12">
+                <div class="p-6 rounded-xl bg-indigo-100 border-2 border-indigo-400 shadow-xl">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 flex items-center">
+                        <span class="mr-2">✨</span> Unsure? Use the Role Advisor
+                    </h3>
+                    <p class="text-indigo-600 mb-4">Describe your task or issue below, and the AI will suggest the most appropriate manager (Katriva or DeAnna) based on their responsibilities.</p>
+                    
+                    <textarea id="taskInput" rows="3" class="w-full p-3 border border-indigo-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-700" placeholder="e.g., I need to draft an email about an upcoming clinic-wide training schedule change."></textarea>
+                    
+                    <button id="adviseButton" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-150 ease-in-out">
+                        Get Manager Recommendation
+                    </button>
+
+                    <!-- Loading and Result Area -->
+                    <div id="resultArea" class="mt-6 p-4 rounded-lg border-2 border-dashed border-indigo-300 bg-white min-h-[50px] hidden">
+                        <div id="loadingIndicator" class="text-center text-indigo-500 font-semibold" style="display: none;">
+                            Analyzing task...
+                        </div>
+                        <div id="advisorResult">
+                            <!-- Result will be inserted here -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Final Summary/Key -->
+            <div class="md:col-span-5 mt-12">
+                <div class="p-6 rounded-xl bg-white border-2 border-gray-200 shadow-xl">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">Key Takeaways</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 rounded-lg border border-teal-300 bg-teal-50">
+                            <p class="font-semibold text-teal-800">Katriva's Focus: LOGISTICS & RESOURCES</p>
+                            <p class="text-sm text-gray-600 mt-1">If it's about **things you need, where you are, or when you work** (like supplies, facility, or your schedule/timecard).</p>
+                        </div>
+                        <div class="p-4 rounded-lg border border-fuchsia-300 bg-fuchsia-50">
+                            <p class="font-semibold text-fuchsia-800">DeAnna's Focus: PEOPLE & POLICY</p>
+                            <p class="text-sm text-gray-600 mt-1">If it's about **other staff, clients, big-picture rules, or resolving problems** (like training, performance, client issues, or clinic policies).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <script>
+        const adviseButton = document.getElementById('adviseButton');
+        const taskInput = document.getElementById('taskInput');
+        const resultArea = document.getElementById('resultArea');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const advisorResult = document.getElementById('advisorResult');
+        const apiKey = ""; 
+
+        const callGeminiAPI = async (userQuery) => {
+            const systemPrompt = `You are a helpful Operations Advisor for an ABA clinic. Your task is to determine whether a given employee task should be directed to Katriva (ABA Assistant Operations Manager) or DeAnna (ABA Operations Manager).
+
+Rules for Manager Assignment:
+1. Katriva (ABA Assistant Operations Manager) handles: Logistics, Scheduling (staff/client/resources), Inventory (supplies, equipment, facility management), Staff Timesheets, and New Client Onboarding (service coordination).
+2. DeAnna (ABA Operations Manager) handles: People Management, Policy, Strategy, Client Relations, Training (RBT/Admin supervision), Performance Reviews, Staff Onboarding (general), Work Environment, and Conflict Resolution (staff/client concerns).
+
+Analyze the user's task description and output ONLY a JSON object with the following structure. Do not include any other text or markdown outside of the JSON block.`;
+
+            // The API URL is correct and uses HTTPS.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "OBJECT",
+                        properties: {
+                            "recommendedManager": {
+                                "type": "STRING",
+                                "description": "The name of the manager: 'Katriva' or 'DeAnna'."
+                            },
+                            "rationale": {
+                                "type": "STRING",
+                                "description": "A brief explanation of why this manager is the best fit, referencing their area of responsibility."
+                            }
+                        },
+                        "required": ["recommendedManager", "rationale"]
+                    }
+                }
+            };
+
+            const maxRetries = 5;
+            let delay = 1000;
+            
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        const jsonText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                        if (jsonText) {
+                            return JSON.parse(jsonText);
+                        }
+                    }
+
+                    // If not OK, but not a server error (e.g., rate limit), retry
+                    if (response.status === 429 || response.status >= 500) {
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        delay *= 2; // Exponential backoff
+                        continue;
+                    }
+
+                    console.error("API response error:", response.status, response.statusText);
+                    return { error: "Failed to get a valid response from the AI." };
+
+                } catch (error) {
+                    console.error("Fetch failed:", error);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+            return { error: "API failed after multiple retries." };
+        };
+
+        const renderResult = (data) => {
+            let outputHTML = '';
+            
+            if (data.error) {
+                outputHTML = `<p class="text-red-600 font-semibold">Error: ${data.error}</p>`;
+            } else {
+                const manager = data.recommendedManager;
+                const rationale = data.rationale;
+                let colorClass = 'text-gray-800';
+                let managerRole = '';
+                
+                if (manager.toLowerCase().includes('katriva')) {
+                    colorClass = 'text-teal-600';
+                    managerRole = '(ABA Assistant Operations Manager)';
+                } else if (manager.toLowerCase().includes('deanna')) {
+                    colorClass = 'text-fuchsia-600';
+                    managerRole = '(ABA Operations Manager)';
+                }
+
+                outputHTML = '<p class="text-lg font-semibold text-gray-700 mb-2">Recommended Manager:</p>' +
+                             `<p class="text-3xl font-extrabold ${colorClass} mb-3">${manager} <span class="text-lg text-gray-500">${managerRole}</span></p>` +
+                             '<p class="text-sm font-semibold text-gray-700 mt-4">Rationale:</p>' +
+                             `<p class="text-gray-600">${rationale}</p>`;
+            }
+            
+            advisorResult.innerHTML = outputHTML;
+        };
+
+        adviseButton.addEventListener('click', async () => {
+            const task = taskInput.value.trim();
+            if (!task) {
+                advisorResult.innerHTML = '<p class="text-red-500">Please describe your task or issue.</p>';
+                resultArea.classList.remove('hidden');
+                return;
+            }
+            
+            // Show loading state
+            resultArea.classList.remove('hidden');
+            advisorResult.innerHTML = '';
+            loadingIndicator.style.display = 'block';
+            adviseButton.disabled = true;
+
+            const result = await callGeminiAPI(`Task: ${task}`);
+            
+            // Hide loading state
+            loadingIndicator.style.display = 'none';
+            adviseButton.disabled = false;
+            
+            renderResult(result);
+        });
+
+    </script>
+</body>
+</html>
